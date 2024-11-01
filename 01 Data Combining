@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.
   SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202409`
 );
 
--- Checking number of rows
+-- Checking number of rows which are 6520915
 
 SELECT COUNT(*)
 FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.combined_data`;
