@@ -1,5 +1,38 @@
-git clone https://github.com/JaswantOnGit/Google-Data-Analytics-Cyclist-Case-Study.git
+-- Data Combining
 
+DROP TABLE IF EXISTS `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.combined_data`;
 
+-- Combining all 12 months data tables into a single table for Sep 2023 to Sep 2024
 
+CREATE TABLE IF NOT EXISTS `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.combined_data` AS (
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202309`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202310`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202311`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202312`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202401`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202402`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202403`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202404`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202405`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202406`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202407`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202408`
+  UNION ALL
+  SELECT * FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.202409`
+);
 
+-- Checking number of rows
+
+SELECT COUNT(*)
+FROM `cyclist-bikeshare-439900.Cyclist_Bikeshare_Analysis.combined_data`;
